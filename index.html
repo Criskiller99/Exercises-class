@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <br>
+    <br>
+    <br>
+    <input id="numeroA" value=""> Número A </input>
+    <br>
+    <br>
+    <br>
+    <input id="numeroB" value=""> Número B </input>
+    <br>
+    <br>
+    <br>
+    <button id="suma" value="1" onclick="operaciones(value)" > SUMA (+)</button>
+    <button id="resta" value="2" onclick="operaciones(value)" > RESTA (-)</button>
+    <button id="multi" value="3" onclick="operaciones(value)" > MULTIPLICACIÓN (*)</button>
+    <button id="division" value="4" onclick="operaciones(value)" > DIVISIÓN (/)</button>
+    <h1>Resultado: </h1><input id="resultadoSuma"></input>
+
+    <script>
+
+        //console.log("Ejecutando codigo Javascript!!!")
+        //const valorA = document.getElementById("numeroA").value
+        //console.log("Valor A ->",valorA)
+        //resultado = Number(valorA) + Number(valorB); //pasar el dato de entrada en tipo numero
+
+        function operaciones(valor){
+            valorA = document.getElementById("numeroA").value; //obtener el id en html y su valor
+            valorB = document.getElementById("numeroB").value;
+            campoResultado = document.getElementById("resultadoSuma");
+            console.log("Campo resultado =>", typeof campoResultado.value, typeof  "")
+
+            if(!valorA || !valorB){
+                console.log("Valor A o B es null (sin datos)",valorA)
+                campoResultado.value = "Ingrese datos";
+            }
+
+            if(valorA && valorB){
+                 if(valor == 1){
+                    campoResultado.value = Number(valorA) + Number(valorB);
+                    console.log(suma);
+                 }
+                if(valor == 2){
+                    campoResultado.value = Number(valorA) - Number(valorB);
+                    console.log(resta);
+                }
+                if(valor == 3){
+                    campoResultado.value = Number(valorA) * Number(valorB);
+                    console.log(resta);
+                }
+                if(valor == 4){
+                    campoResultado.value = Number(valorA) / Number(valorB);
+                    console.log(resta);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
